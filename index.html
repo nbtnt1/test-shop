@@ -7,13 +7,14 @@
     <title>PaymentMenu</title>
     <script language="javascript">
         var script = document.createElement('script');
-        var url = "https://ecom.stage.payex.com/checkout/client/79c4f6da25572cd40cbb1cd1de92135a7524b8382012ffc9ed9767b734a63739?culture=en-US&_tc_tid=b4a9a4419e234709be9e3836e3d5020d";
+        var url = "https://ecom.stage.payex.com/checkout/client/4998901301b46f878f41576366ff66a2538b2aea696fa2a3160f3d7cad2ded7e?culture=en-US&_tc_tid=a991d2c618664dad96d48d65875e33cb";
 
         script.setAttribute('src', url);
         script.onload = function () {
             window.payex.hostedView.paymentMenu({
                 container: "payment",
                 //culture: 'en-US',
+                onExternalRedirect: function onExternalRedirect(data) {window.location.href=data.redirectUrl},
             }).open();
         };
         // Append the Payment Menu script to the <head>
