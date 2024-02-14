@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>PaymentMenu</title>
+    <script language="javascript">
+        var script = document.createElement('script');
+        var url = "https://ecom.stage.payex.com/checkout/client/a75fe2b6c6b68ca77b3c6ce86d0604c9da1f7d7f1422a5d047635efa3be2e31a?culture=sv-SE&_tc_tid=e089487e91034dc1bff7cac8f6eae5b0";
+
+        script.setAttribute('src', url);
+        script.onload = function () {
+            window.payex.hostedView.paymentMenu({
+                container: "payment",
+                //culture: 'en-US',
+            }).open();
+        };
+        // Append the Payment Menu script to the <head>
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(script);
+    </script>
+</head>
+
+<body>
+    <div style="display:flex;justify-content: center;width: 100%;min-height: 500px;align-items: center;">
+        <div style="display:flex;flex-direction:column; align-items: center; width: 70%;">
+        
+        <div id="payment" style="width: 100%;"> </div>
+
+        </div>
+    </div>
+
+    
+</body>
+</html>
